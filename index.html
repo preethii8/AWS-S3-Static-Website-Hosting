@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preethi S | Technical Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #141e30;
+      --text: #edf3ff;
+      --muted: #aabbd1;
+      --accent: #5eead4;
+      --border: #29384d;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.7 system-ui, sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    .wrap { width: min(1100px, 90%); margin: auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #0b1120f5;
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px 0;
+    }
+    .brand { font-weight: 800; font-size: 22px; }
+    .links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .links a { color: var(--muted); font-size: 14px; }
+    .hero {
+      min-height: 68vh;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 48px;
+      padding: 80px 0;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font: 600 13px/1.5 monospace;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { font-size: clamp(44px, 7vw, 82px); margin: 16px 0; }
+    h2 { font-size: clamp(28px, 4vw, 40px); margin: 10px 0 24px; }
+    h3 { font-size: 21px; margin: 0 0 12px; }
+    p { color: var(--muted); }
+    .role { font-size: 23px; color: var(--text); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-block;
+      padding: 11px 22px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      font-weight: 700;
+    }
+    .primary { background: var(--accent); color: #08201f; }
+    .button:hover { opacity: .85; text-decoration: none; }
+    .terminal {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px #0005;
+    }
+    .terminal-bar {
+      padding: 14px 20px;
+      background: #202d40;
+      color: var(--muted);
+      font: 13px monospace;
+    }
+    .terminal-body { padding: 24px; font: 15px/2 monospace; }
+    .terminal-body p { margin: 0; overflow-wrap: anywhere; }
+    .prompt { color: var(--accent); }
+    section { padding: 64px 0; border-top: 1px solid var(--border); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+    .card:hover { border-color: var(--accent); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #203349;
+      color: #c5e5ef;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+    .timeline { display: grid; gap: 20px; }
+    .job { border-left: 3px solid var(--accent); }
+    .date { color: var(--accent); font-size: 14px; }
+    ul { padding-left: 20px; color: var(--muted); }
+    li { margin: 8px 0; }
+    .project { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+    .steps { display: grid; gap: 10px; align-content: center; }
+    .step {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--muted);
+      font-family: monospace;
+    }
+    .step strong { color: var(--accent); }
+    .contact { text-align: center; }
+    .contact .actions { justify-content: center; }
+    footer { padding: 28px 0; text-align: center; color: var(--muted); }
+    @media (max-width: 760px) {
+      .hero, .project { grid-template-columns: 1fr; }
+      .hero { padding: 50px 0; gap: 24px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 42px 0; }
+      html { scroll-padding-top: 145px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">PS<span class="prompt">.</span></a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main class="wrap">
+    <div class="hero" id="home">
+      <div>
+        <div class="eyebrow">Technical portfolio / Coimbatore, India</div>
+        <h1>Preethi S<span class="prompt">.</span></h1>
+        <p class="role">Technical Support Engineer | Linux &amp; DevOps Enthusiast</p>
+        <p>I troubleshoot technical issues, support reliable systems and build hands-on Linux automation projects.</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">View my project</a>
+          <a class="button" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">● ● ● &nbsp; preethi@linux:~</div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> whoami</p>
+          <p>Preethi S</p>
+          <p><span class="prompt">$</span> cat focus.txt</p>
+          <p>Technical Support</p>
+          <p>Linux Administration</p>
+          <p>Infrastructure Automation</p>
+          <p><span class="prompt">$</span> echo $GOAL</p>
+          <p>Learn. Troubleshoot. Automate.</p>
+        </div>
+      </div>
+    </div>
+    <section id="about">
+      <div class="eyebrow">01 / Profile</div>
+      <h2>About me</h2>
+      <p>I am a Technical Support Engineer with experience in L1/L2 support, incident management, application troubleshooting and network connectivity. My hands-on RHEL lab work includes user management, permissions, SSH, system services and security patch automation.</p>
+      <p>I am interested in technical support, Linux administration and opportunities to grow in DevOps.</p>
+    </section>
+    <section id="skills">
+      <div class="eyebrow">02 / Toolkit</div>
+      <h2>Technical skills</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Operating systems</h3>
+          <p>RHEL 9, Ubuntu, Windows OS</p>
+        </article>
+        <article class="card">
+          <h3>Linux administration</h3>
+          <p>Users, groups, permissions, sudo, SSH, DNF, systemd and monitoring.</p>
+        </article>
+        <article class="card">
+          <h3>Automation &amp; CI/CD</h3>
+          <p>Ansible, YAML, Puppet, Jenkins basics, Bash and basic Python.</p>
+        </article>
+        <article class="card">
+          <h3>Networking</h3>
+          <p>TCP/IP, DNS, DHCP, LAN/WAN, firewalld and iptables fundamentals.</p>
+        </article>
+        <article class="card">
+          <h3>IT support</h3>
+          <p>L1/L2 support, SLA, incident triage, RCA, escalation and documentation.</p>
+        </article>
+        <article class="card">
+          <h3>Development tools</h3>
+          <p>Git, GitHub and foundational SQL queries.</p>
+        </article>
+      </div>
+    </section>
+    <section id="experience">
+      <div class="eyebrow">03 / Career</div>
+      <h2>Professional experience</h2>
+      <div class="timeline">
+        <article class="card job">
+          <div class="date">June 2026 – October 2026</div>
+          <h3>Associate Support Engineer</h3>
+          <p>Greenbotz Platform Pvt Ltd · Coimbatore</p>
+          <ul>
+            <li>Managed L1/L2 tickets from logging to closure.</li>
+            <li>Troubleshot hardware, software, connectivity and MQTT issues.</li>
+            <li>Investigated smart intercom and ANPR camera faults.</li>
+            <li>Supported BMS and BiomeX applications and monitored alerts.</li>
+            <li>Coordinated with field and technical teams and documented fixes.</li>
+          </ul>
+        </article>
+        <article class="card job">
+          <div class="date">February 2025 – March 2026</div>
+          <h3>Seller Support Associate</h3>
+          <p>Sutherland Global Services Pvt Ltd · Chennai</p>
+          <ul>
+            <li>Resolved seller account, listing and platform issues.</li>
+            <li>Prioritized cases, documented resolutions and escalated complex issues.</li>
+            <li>Followed SOPs and supported junior team members.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="eyebrow">04 / Hands-on lab</div>
+      <h2>Featured project</h2>
+      <article class="card project">
+        <div>
+          <h3>Automated Linux Security Patch Management</h3>
+          <p>Built Ansible playbooks and integrated them with Jenkins to automate security patching on a RHEL 9 lab server over SSH.</p>
+          <p>Validated disk space, conditional reboot, kernel version and system health. Completed an end-to-end pipeline run with zero failed tasks.</p>
+          <div class="tags">
+            <span class="tag">RHEL 9</span>
+            <span class="tag">Ansible</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">YAML</span>
+            <span class="tag">SSH</span>
+            <span class="tag">VirtualBox</span>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/preethii8/Automated-Patch-Management-Ansible-Jenkins">View source code</a>
+          </div>
+        </div>
+        <div class="steps" aria-label="Patching workflow">
+          <div class="step"><strong>01</strong> Verify SSH connectivity</div>
+          <div class="step"><strong>02</strong> Pre-patch health checks</div>
+          <div class="step"><strong>03</strong> Install security updates</div>
+          <div class="step"><strong>04</strong> Conditional reboot</div>
+          <div class="step"><strong>05</strong> Post-patch verification</div>
+        </div>
+      </article>
+    </section>
+    <section id="education">
+      <div class="eyebrow">05 / Education</div>
+      <h2>Academic background</h2>
+      <article class="card">
+        <h3>B.E. Electronics and Communication Engineering</h3>
+        <p>KPR Institute of Engineering and Technology</p>
+        <p>2020 – 2024 | 79.99%</p>
+      </article>
+    </section>
+    <section class="contact" id="contact">
+      <div class="eyebrow">06 / Connect</div>
+      <h2>Let's work together</h2>
+      <p>Open to technical support and Linux administration opportunities.</p>
+      <div class="actions">
+        <a class="button primary" href="mailto:preethiiselvarajan@gmail.com">Email me</a>
+        <a class="button" href="https://github.com/preethii8">GitHub</a>
+        <a class="button" href="https://www.linkedin.com/in/preethi-selvarajan-2ba31b235/">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+  <footer>Preethi S · Technical Portfolio</footer>
+</body>
+</html>
